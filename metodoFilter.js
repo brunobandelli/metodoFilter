@@ -6,27 +6,23 @@ sem modificar o array original.
  O método filter() em JavaScript já internamente avalia uma condição (semelhante a um "if") 
 para decidir quais elementos manter no novo array e quais excluir.
 
- A função de callback que você passa para o filter() deve retornar um valor booleano (true ou false). 
- Se a função retornar true para um determinado elemento, esse elemento será incluído no novo array; 
-se a função retornar false, o elemento será excluído.
-
  Portanto, não é necessário usar um if dentro da função de callback. 
- A própria expressão de retorno dentro da função de callback age como a condição para
-decidir se um elemento deve ser incluído ou não no novo array.
+ A própria expressão de retorno age como uma condição booleana(true e false) para
+decidir se um elemento deve ser incluido ou não, respectivamente, no novo array.
 */
 
 //Exemplo 01
+const arrayOriginal_Idades = [15,21,30,17,18,44,12,50]
 
-const filtroMaior18=(valor)=>{
+function filtroMaior18(valor){
     if(valor>=18){
         return valor
     }
 }
 
-const idades = [15,21,30,17,18,44,12,50]
-const maior = idades.filter(filtroMaior18)
+const maior = arrayOriginal_Idades.filter(filtroMaior18)
 
-console.log(idades)
+console.log(arrayOriginal_Idades)
 console.log(maior)
 
 /*-------------------------------------------------------------------------------------------*/
@@ -34,7 +30,7 @@ console.log("-------------------------------------------------------------------
 
 //Exemplo 2
 
-const menor = idades.filter((val)=>{if(val<18){return val}})
+const menor = arrayOriginal_Idades.filter((val)=>{if(val<18){return val}})
 console.log(menor)
 
 
